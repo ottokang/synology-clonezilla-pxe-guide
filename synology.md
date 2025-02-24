@@ -10,7 +10,7 @@
 
 2. 到**控制台** → **檔案服務** → **進階設定**，啟動 TFTP 伺服器，設定 TFTP 根目錄為放置 SYSLINUX 檔案的資料夾。
 
-![Synology_TFTP](./images/synology/synology_tftp.png)
+![Synology_TFTP](https://github.com/ottokang/synology-clonezilla-pxe-guide/blob/main/download/pxe.zip)
 
 ## 2. 設定 HTTP 伺服器
 
