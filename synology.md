@@ -4,13 +4,13 @@
 
 ## 1. 啟動 TFTP 伺服器
 
-1. 下載 PXE 需要的檔案，放置於 Synology 伺服器中，範例放置於 pxe 資料夾中。[<下載連結>](./download/pxe.zip)
+1. 下載 PXE 需要的檔案，放置於 Synology 伺服器中，範例放置於 pxe 資料夾中。[<下載連結>](https://github.com/ottokang/synology-clonezilla-pxe-guide/blob/main/download/pxe.zip)
     * 傳統 BIOS 開機由 SYSLINUX 6.03 提供
     * UEFI Grub 開機使用 Ubuntu Netboot，不支援 Secure Boot
 
 2. 到**控制台** → **檔案服務** → **進階設定**，啟動 TFTP 伺服器，設定 TFTP 根目錄為放置 SYSLINUX 檔案的資料夾。
 
-![Synology_TFTP](https://github.com/ottokang/synology-clonezilla-pxe-guide/blob/main/download/pxe.zip)
+![Synology_TFTP](./images/synology/synology_tftp.png)
 
 ## 2. 設定 HTTP 伺服器
 
