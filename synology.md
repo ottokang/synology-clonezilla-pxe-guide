@@ -1,25 +1,27 @@
 # Synology 設定
 
+[← 返回首頁](./)
+
 首先要在 Synology 啟動 TFTP 服務，然後在網路設定 PXE 開機的引導檔案
 
 ## 1. 啟動 TFTP 伺服器
 
-1. 下載 PXE 需要的檔案，放置於 Synology 伺服器中，範例放置於 pxe 資料夾中。[<下載連結>](https://github.com/ottokang/synology-clonezilla-pxe-guide/blob/main/download/pxe.zip)
-    * 傳統 BIOS 開機由 SYSLINUX 6.03 提供
+1. 下載 PXE 需要的檔案，放置於 Synology 伺服器中，範例放置於 pxe 資料夾中。[下載連結](https://github.com/ottokang/synology-clonezilla-pxe-guide/releases/download/download_file/pxe.zip)
+    * 傳統 BIOS 開機使用 SYSLINUX 6.03
     * UEFI Grub 開機使用 Ubuntu Netboot，不支援 Secure Boot
 
-2. 到**控制台** → **檔案服務** → **進階設定**，啟動 TFTP 伺服器，設定 TFTP 根目錄為放置 SYSLINUX 檔案的資料夾。
+2. 到`控制台` → `檔案服務` → `進階設定`，啟動 TFTP 伺服器，設定 TFTP 根目錄為放置 SYSLINUX 檔案的資料夾。
 
 ![Synology_TFTP](./images/synology/synology_tftp.png)
 
 ## 2. 設定 HTTP 伺服器
 
-1. 安裝 Web Station 套件，設定可以存取 pxe 資料夾。建議可以使用**連接埠對應**模式來存取，再透過防火牆限制只能透過內部網路存取。
+安裝 Web Station 套件，設定可以存取 pxe 資料夾。建議可以使用`連接埠對應`來存取，再透過防火牆限制只能透過內部網路存取。
 ![Synology_HTTP](./images/synology/synology_http.png)
 
 ## 3. 設定 PXE 引導檔案（傳統 BIOS）
 
-1. 到 **DHCP 伺服器** → **PXE**，勾選**啟動 PXE（預先執行環境）**，設定開機載入器為 pxe 目錄下的 lpxelinux.0 檔案。
+1. 到 `DHCP 伺服器` → `PXE`，勾選`啟動 PXE（預先執行環境）`，設定開機載入器為 pxe 目錄下的 lpxelinux.0 檔案。
 ![Synology_PXE](./images/synology/synology_pxe.png)
 
 ## 4. 設定 PXE 引導檔案（UEFI）

@@ -1,6 +1,10 @@
 # 傳統 BIOS PXE 選單設定
 
-設定檔位於 pxelinux.cfg 資料夾，直接編輯 default 檔案即可，檔案格式設定為 ANSI
+[← 返回首頁](./)
+
+## 設定檔位置與編碼格式
+
+設定檔位於 pxelinux.cfg 資料夾中，直接編輯 default 檔案，檔案編碼格式設定為 ANSI
 
 ## 設定檔說明
 
