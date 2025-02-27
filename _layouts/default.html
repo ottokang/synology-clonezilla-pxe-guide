@@ -6,13 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
     <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-
+    <style type="text/css">
+        #main_content_wrap {
+            background: #d2cab3;
+        }
+    </style>
     {% seo %}
     {% include head-custom.html %}
 </head>
 
 <body>
-
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
@@ -32,7 +35,7 @@
     <div id="footer_wrap" class="outer">
         <footer class="inner">
             {% if site.github.is_project_page %}
-                <a href="{{ site.github.repository_url }}">GitHub 專案網站</a>
+            <a href="{{ site.github.repository_url }}">GitHub 專案網站</a>
             {% endif %}
         </footer>
     </div>
