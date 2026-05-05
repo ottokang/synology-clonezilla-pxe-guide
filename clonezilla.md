@@ -30,13 +30,14 @@ ocs_repository="smb3://administrator:mypasswd@192.168.100.175/images/"
 參數範例：
 
 ```bash
-ocs_live_run="ocs-sr -q2 -j2 -batch -rm-win-swap-hib -z9p -i 0 -sfsck -scs -senc -p poweroff savedisk ask_user all"
+ocs_live_run="ocs-sr -q2 -j2 -edio -batch -rm-win-swap-hib -z9p -i 0 -sfsck -scs -senc -p poweroff savedisk ask_user all"
 ```
 
 參數說明：
 
 * **-q2**：使用 Partclone 來保存映像檔
 * **-j2**：保存磁碟中 MBR 的隱藏資料
+* **-edio**：啟動 NVMe 的 Direct I/O
 * **-batch**：使用批次模式，不會進行任何確認
 * **-rm-win-swap-hib**：移除 Windows 系統中虛擬記憶體檔、休眠檔，可節省映像檔大小
 * **-z9p**：使用 zstd 多執行緒模式壓縮，多數情況下會是最佳模式
@@ -67,6 +68,7 @@ ocs_live_run="ocs-sr -g auto -batch -e1 auto -e2 -r -hn1 pc -icds -j2 -k1 -scr -
 * **-hn1 pc**：自動建立還原電腦名稱（Windows 適用），hn1 會以 MAC 後面 6 碼命名，後面的參數則做為名稱前綴，這個範例會將電腦命名為 pc-xxxxxxx
 * **-icds**：忽略還原目標硬碟大小，大硬碟到小硬碟適用
 * **-j2**：複製 MBR 到第一個分割區的隱藏資料
+* **-edio**：啟動 NVMe 的 Direct I/O
 * **-k1**：依照比例調整分割區
 * **-scr**：跳過映像檔檢查
 * **-p reboot**：還原後重新啟動
@@ -76,10 +78,10 @@ ocs_live_run="ocs-sr -g auto -batch -e1 auto -e2 -r -hn1 pc -icds -j2 -k1 -scr -
 
 ### Q & A
 
-#### Q1. 儲存映像檔出現錯誤
+#### Q1. Windows 下儲存映像檔出現錯誤
 
-進行 chkdsk 掃描磁碟後再進行儲存。
+進行 chkdsk 掃描磁碟後再進行儲存
 
 #### Q2. 從大硬碟還原到小硬碟出現錯誤
 
-如果原本磁區有分割（例如 C、D），通常大硬碟到小硬碟可以成功，如果只有單一分割區，就無法進行大硬碟到小硬碟的還原，如果電腦型號較多，建議以最小硬碟的機型做為映像檔範本。
+如果原本磁區有分割（例如 C、D），通常大硬碟到小硬碟可以成功，如果只有單一分割區，就無法進行大硬碟到小硬碟的還原，如果電腦型號較多，建議以最小硬碟的機型做為映像檔範本
