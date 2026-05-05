@@ -71,7 +71,7 @@ LABEL gparted
         GParted Live
     ENDTEXT
 
-# 啟動 Memtest86+ 穩定版
+# 啟動 Memtest86+
 LABEL memtest86
     MENU INDENT 4
     MENU LABEL Memtest86+

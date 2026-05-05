@@ -1,4 +1,5 @@
-# 在 Synology NAS 上建立 PXE 還原伺服器
+# 首頁
+
 CloneZilla 是一個強大的還原工具，可以進行硬碟的備份與還原，以下教學會介紹如何在 Synology NAS 上面建立網路開機 PXE 的 ClozeZilla 伺服器：
 
 ## 1. [Synology NAS 設定](./synology.md)
