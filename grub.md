@@ -4,11 +4,11 @@
 
 ## 設定檔位置與編碼格式
 
-設定檔位於 grub 資料夾中，編輯 grub.cfg 檔案，檔案編碼格式需設定為 UTF-8（無 BOM），才能正確顯示中文
+設定檔位於 grub 資料夾中，編輯 grub.cfg 檔案，檔案編碼格式需設定為 `UTF-8（無 BOM）`，才能正確顯示中文
 
 ## 選單設定檔說明
 
-GRUB 命令可以參考 <https://www.gnu.org/software/grub/manual/grub/grub.html>
+GRUB 命令可參考 <https://www.gnu.org/software/grub/manual/grub/grub.html>
 
 以下為設定檔範例：
 
