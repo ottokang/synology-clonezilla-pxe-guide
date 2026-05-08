@@ -31,13 +31,18 @@
 
 2. 使用 SSH 客戶端軟體登入，修改 **/etc/dhcpd/dhcpd-pxe.conf** 檔案（可使用 `vi`）：
 
-```bash
-# 註解以下兩行
-# dhcp-boot=tag:pxe,lpxelinux.0
-# dhcp-vendorclass=set:pxe,PXEClient
+    ```bash
+    # 註解以下兩行
+    # dhcp-boot=tag:pxe,lpxelinux.0
+    # dhcp-vendorclass=set:pxe,PXEClient
 
-#新增以下三行，在 X.X.X.X 輸入伺服器 IP
-dhcp-boot=lpxelinux.0,pxeserver,X.X.X.X
-dhcp-match=set:efi-x86_64,option:client-arch,7
-dhcp-boot=tag:efi-x86_64,grub/bootx64.efi
-```
+    # BIOS 開機設定
+    dhcp-boot=lpxelinux.0
+
+    # UEFI 開機設定
+    dhcp-match=set:efi-x86_64,option:client-arch,7
+    dhcp-match=set:efi-x86_64,option:client-arch,9
+    dhcp-boot=tag:efi-x86_64,grub/bootx64.efi
+    ```
+
+3. 如果更新了 DHCP 套件，則需要重新設定

@@ -35,11 +35,11 @@ ocs_repository="smb3://administrator:mypasswd@192.168.100.175/images/"
 
         * **-q2**：使用 Partclone 來保存映像檔
         * **-j2**：保存磁碟中 MBR 的隱藏資料
-        * **-edio**：啟動 NVMe 的 Direct I/O
+        * **-edio**：啟動 NVMe 的 Direct I/O 功能
         * **-batch**：使用批次模式，不會進行任何確認
-        * **-rm-win-swap-hib**：移除 Windows 系統中虛擬記憶體檔、休眠檔，可節省映像檔大小
+        * **-rm-win-swap-hib**：移除 Windows 作業系統中虛擬記憶體檔、休眠檔，可節省映像檔大小
         * **-z9p**：使用 zstd 多執行緒模式壓縮，多數情況下會是最佳模式
-        * **-i 0**：映像檔分片大小，單位是 MB，0 表示不分片，如果儲存映像檔目標是 fat32 系統，分片大小不能大於 4096 MB
+        * **-i 0**：映像檔分片大小，單位為 MB，0 表示不分片，如果儲存映像檔目標是 fat32 系統，分片大小不能大於 4096 MB
         * **-sfsck**：建立映像檔前跳過系統磁區檢查
         * **-scs**：建立映像檔後跳過映像檔檢查
         * **-senc**：建立映像檔前跳過映像檔加密
@@ -64,7 +64,7 @@ ocs_repository="smb3://administrator:mypasswd@192.168.100.175/images/"
         * **-hn1 pc**：自動建立還原電腦名稱（Windows 適用），hn1 會以 MAC 後面 6 碼命名，後面的參數則做為名稱前綴，這個範例會將電腦命名為 pc-xxxxxxx
         * **-icds**：忽略還原目標硬碟大小，大硬碟到小硬碟適用
         * **-j2**：複製 MBR 到第一個分割區的隱藏資料
-        * **-edio**：啟動 NVMe 的 Direct I/O
+        * **-edio**：啟動 NVMe 的 Direct I/O 功能
         * **-k1**：依照比例調整分割區
         * **-scr**：跳過映像檔檢查
         * **-p reboot**：還原後重新啟動
